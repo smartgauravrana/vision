@@ -1,0 +1,31 @@
+{
+  "name": "vision-backend",
+  "version": "1.0.0",
+  "description": "backend for vision project by Gaurav Rana and Chirag Malhotra",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smartgauravrana/vision-backend.git"
+  },
+  "keywords": [
+    "vision",
+    "blogging",
+    "social",
+    "network",
+    "education",
+    "knowledge"
+  ],
+  "author": "Gaurav and Chirag",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smartgauravrana/vision-backend/issues"
+  },
+  "homepage": "https://github.com/smartgauravrana/vision-backend#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  }
+}
