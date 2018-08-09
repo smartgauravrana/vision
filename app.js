@@ -9,7 +9,7 @@ const passport = require('passport');
 const app = express();
 
 
-app.set('port', 3000);
+app.set('port', 5000);
 
 app.use((req, res, next) => {
     console.log(req.method, req.url);
