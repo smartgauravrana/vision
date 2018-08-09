@@ -32,7 +32,14 @@ router
 //post
 router
 	.route('/posts')
-	.post(ctrlPosts.postsAddOne);									
+	.get(ctrlPosts.postsGetAll)
+	.post(ctrlPosts.postsAddOne);	
+	
+router
+	.route('/posts/:postId')
+	.get(ctrlPosts.postsGetOne)
+	.put(ctrlPosts.postsUpdateOne)
+	.delete(ctrlPosts.postsDeleteOne);
 
 
 router
