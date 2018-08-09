@@ -3,7 +3,7 @@ const User = mongoose.model('User');
 
 module.exports.findUsername = (req, res) => {
 	if (req.body.username) {
-		user.findOne({'username': req.body.username}, (err, docs) => {
+		User.findOne({'username': req.body.username}, (err, docs) => {
 			if (err) {
 				console.log(err);
 			}
@@ -11,7 +11,7 @@ module.exports.findUsername = (req, res) => {
 				res.json({success: true, message: 'Username available'});
 			}
 			else {
-				res.json({success: false, message: 'username not available'});
+				res.json({success: false, message: 'Username not available'});
 			}
 		})
 	}
