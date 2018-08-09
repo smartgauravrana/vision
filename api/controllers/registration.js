@@ -27,7 +27,7 @@ passport.use(new facebookStrategy({
 				newUser.facebook.email = profile.emails[0].value;
 			}
 
-			newUser.save(function(err){
+			newUser.save(err => {
 				if(err)
 					return done(err);
 				return done(null, newUser);
@@ -60,7 +60,7 @@ passport.use(new GoogleStrategy({
 				newUser.google.email = profile.emails[0].value;
 			}
 
-			newUser.save(function(err){
+			newUser.save(err => {
 				if(err)
 					return done(err);
 				return done(null, newUser);
