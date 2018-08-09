@@ -9,7 +9,7 @@ passport.use(new facebookStrategy({
 	clientID: config.facebookAuth.clientId,
 	clientSecret: config.facebookAuth.clientSecret,
 	callbackURL: config.facebookAuth.callbackURL,
-	profileFields: ['id', 'emails', 'name']
+	profileFields: ['id', 'emails', 'displayName', 'name', 'picture.type(large)']
 }, (accessToken, refreshToken, profile, done) => {
 	console.log(profile);
 	User.findOne({'facebook.id': profile.id}, (err, user) => {
@@ -22,6 +22,7 @@ passport.use(new facebookStrategy({
 			newUser.facebook.id = profile.id;
 			newUser.facebook.token = accessToken;
 			newUser.facebook.name = profile.displayName;
+			newUser.facebook.image = profile.photos[0].value;
 			if (profile.emails) {
 				newUser.facebook.email = profile.emails[0].value;
 			}
@@ -54,6 +55,7 @@ passport.use(new GoogleStrategy({
 			newUser.google.id = profile.id;
 			newUser.google.token = accessToken;
 			newUser.google.name = profile.displayName;
+			newUser.google.image = profile.photos[0].value;
 			if (profile.emails) {
 				newUser.google.email = profile.emails[0].value;
 			}
