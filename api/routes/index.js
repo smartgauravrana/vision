@@ -3,7 +3,9 @@ const router = express.Router();
 const passport = require('passport');
 const username = require('../controllers/username');
 
-//
+const ctrlPosts = require('../controllers/posts.controller');
+
+//facebook oauth routes
 router
 	.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email']}));
 
@@ -27,8 +29,15 @@ router
 											session: false 
 										}));
 
+//post
+router
+	.route('/posts')
+	.post(ctrlPosts.postsAddOne);									
+
+
 router
 	.post('/findusername', username.findUsername);
+
 
 router
 	.post('/updateusername', username.updateUsername);
