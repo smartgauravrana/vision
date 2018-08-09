@@ -36,10 +36,12 @@ router
 
 
 router
-	.post('/findusername', username.findUsername);
+	.route('/findusername')
+	.post(username.findUsername);
 
 
 router
-	.post('/updateusername', username.updateUsername);
+	.route('/updateusername')
+	.post(username.updateUsername);
 
 module.exports = router;
