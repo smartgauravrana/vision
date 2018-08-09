@@ -4,6 +4,9 @@
   "description": "backend for vision project by Gaurav Rana and Chirag Malhotra",
   "main": "app.js",
   "scripts": {
+    "client": "cd client && npm run start",
+    "server": "nodemon app.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
