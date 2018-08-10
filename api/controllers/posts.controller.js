@@ -1,5 +1,5 @@
-var mongoose = require('mongoose');
-var Post = require('../data/model/posts');
+const mongoose = require('mongoose');
+const Post = require('../data/model/posts');
 
 module.exports.postsAddOne = (req, res) => {
     console.log('Adding new post');

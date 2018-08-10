@@ -4,6 +4,7 @@ const passport = require('passport');
 const username = require('../controllers/username');
 
 const ctrlPosts = require('../controllers/posts.controller');
+const ctrlComments = require('../controllers/comments.controller');
 
 //facebook oauth routes
 router
@@ -29,7 +30,7 @@ router
 											session: false 
 										}));
 
-//post
+//post routes
 router
 	.route('/posts')
 	.get(ctrlPosts.postsGetAll)
@@ -40,6 +41,17 @@ router
 	.get(ctrlPosts.postsGetOne)
 	.put(ctrlPosts.postsUpdateOne)
 	.delete(ctrlPosts.postsDeleteOne);
+
+//comment routes
+router
+	.route('/posts/:postId/comments')
+	.get(ctrlComments.commentsGetAll)
+	.post(ctrlComments.commentsAddOne);
+
+router
+	.route('/posts/:postId/comments/:commentId')
+	.put(ctrlComments.commentsUpdateOne)
+	.delete(ctrlComments.commentsDeleteOne);
 
 
 router
