@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const username = require('../controllers/username');
+const search = require('../controllers/search');
 
 const ctrlPosts = require('../controllers/posts.controller');
 
@@ -50,5 +51,9 @@ router
 router
 	.route('/updateusername')
 	.post(username.updateUsername);
+
+router
+	.route('/searchpeople')
+	.post(search.searchPeople);
 
 module.exports = router;
