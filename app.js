@@ -1,5 +1,7 @@
 require('./api/data/db');
-require('./api/controllers/registration');
+require('./api/data/model/user.model');
+require('./api/data/model/posts.model');
+require('./api/controllers/registration.controller');
 
 const express = require('express');
 const path = require('path');

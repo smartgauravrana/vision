@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
-const username = require('../controllers/username');
-const search = require('../controllers/search');
-
+const username = require('../controllers/username.controller');
+const search = require('../controllers/search.controller');
 const ctrlPosts = require('../controllers/posts.controller');
 const ctrlComments = require('../controllers/comments.controller');
 

@@ -3,7 +3,8 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 const passport = require('passport')
 const config = require('../config/auth');
-const User = require('../data/model/user');
+const mongoose = require('mongoose');
+const User = mongoose.model('User');
 
 passport.use(new facebookStrategy({
 	clientID: config.facebookAuth.clientId,

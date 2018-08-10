@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Post = require('../data/model/posts');
+const Post = mongoose.model('Post');
 
 const _addComments = (req, res, post) => {
     post.comments.push({
@@ -31,7 +31,7 @@ const _addComments = (req, res, post) => {
     Post
       .findById(id)
       .select('comments')
-      .exec(function(err, doc) {
+      .exec((err, doc) => {
         var response = {
           status : 200,
           message : doc
@@ -68,7 +68,7 @@ module.exports.commentsGetAll = (req, res) => {
   Post
     .findById(id)
     .select('comments')
-    .exec(function(err, doc) {
+    .exec((err, doc) => {
       var response = {
         status : 200,
         message : []
