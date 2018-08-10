@@ -94,7 +94,7 @@ module.exports.commentsGetAll = (req, res) => {
 
 //Delete comment for a post
 module.exports.commentsDeleteOne = (req, res) => {
-    const postId = req.params.postId;
+  const postId = req.params.postId;
   const commentId = req.params.commentId;
   console.log('DELETE commentId ' + commentId + ' for postId ' + postId);
 

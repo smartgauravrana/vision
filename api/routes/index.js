@@ -5,6 +5,7 @@ const username = require('../controllers/username.controller');
 const search = require('../controllers/search.controller');
 const ctrlPosts = require('../controllers/posts.controller');
 const ctrlComments = require('../controllers/comments.controller');
+const ctrlLikes = require('../controllers/likes.controller');
 
 //facebook oauth routes
 router
@@ -53,6 +54,11 @@ router
 	.put(ctrlComments.commentsUpdateOne)
 	.delete(ctrlComments.commentsDeleteOne);
 
+//comment likes routes
+router
+	.route('/posts/:postId/comments/:commentId/likes')
+	.get(ctrlLikes.likesGetAll)
+	.post(ctrlLikes.likesToggle)
 
 router
 	.route('/findusername')
