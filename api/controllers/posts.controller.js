@@ -164,11 +164,18 @@ module.exports.postsDeleteOne = (req, res) => {
             .status(500)
             .send()
         }
+
         const response = {
-            message: "Post successfully deleted",
-            id: post._id
+            status: 200,
+            msg: {message: "Post successfully deleted"}
         };
-        return res.status(200).send(response);
+
+        if(!post) {
+            response.status = 404;  
+            response.msg.message = "Post not found"
+        }
+        
+        return res.status(response.status).send(response.msg);
     });
 };
 

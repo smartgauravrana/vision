@@ -53,4 +53,21 @@ const postSchema = new mongoose.Schema({
     }	
 });
 
-mongoose.model('Post', postSchema);
+postSchema.pre('remove', function(req, res, next) {
+    console.log('post id middleware: ', req.params.postId);
+    const User = mongoose.model('User');
+    User.findByIdAndRemove(this.author, { $pullAll: {posts: [req.params.postId] } } )
+    .then(() => next())
+    .catch(err => console.log(err));
+});
+
+postSchema.post('save', function (next) {
+    const User = mongoose.model('User');
+    User.findByIdAndUpdate(this.author, {$push: {posts: this}})
+    .then()
+    .catch(err => console.log(err));
+});
+
+const Post = mongoose.model('Post', postSchema);
+
+module.exports = Post;

@@ -88,18 +88,8 @@ module.exports.likesToggle = (req, res) => {
           .status(response.status)
           .json(response.message);
       } else {
-          console.log('likes', thisComment.likes);
-        // thisComment.likes.find({username: username}, (err, like) => {
-        //     if (err) {
-        //         console.log("Error finding username");
-        //         response.status = 500;
-        //         response.message = err;
-        //     } else if(!like) {
-        //         thisComment.likes.create({username: username});
-        //     } else {
-        //         like.remove();
-        //     }
-        // })
+        console.log('likes', thisComment.likes);
+        
         const found = thisComment.likes.find(obj => {
             return obj.username === username;
         });
@@ -112,7 +102,6 @@ module.exports.likesToggle = (req, res) => {
            thisComment.likes.id(found._id).remove();
         }
         
-        // thisComment.comment = req.body.comment;
         post.save(function(err, postUpdated) {
           if (err) {
             res

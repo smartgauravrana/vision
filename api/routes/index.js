@@ -78,4 +78,9 @@ router
 	.route('/follow')
 	.post(follow.followUser);
 
+//test routes
+router
+	.route('/users/:userId')
+	.get(username.getUserDetails);
+
 module.exports = router;

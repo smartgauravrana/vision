@@ -40,4 +40,21 @@ module.exports.updateUsername = (req, res) => {
 	else {
 		res.json({success: false, message: 'Username not provided'});
 	}
-}
+};
+
+module.exports.getUserDetails = (req, res) => {
+	const userId = req.params.userId;
+
+	User
+		.findById(userId)
+		.populate('posts')
+		.then(user => {
+			if (!user) {
+				res.status(404).json({message: 'user does not exist'});
+			} else {
+				res.status(200).json(user);
+			}
+		})
+		.catch(err => console.log(err));
+	;
+};
