@@ -6,6 +6,7 @@ const search = require('../controllers/search.controller');
 const ctrlPosts = require('../controllers/posts.controller');
 const ctrlComments = require('../controllers/comments.controller');
 const ctrlLikes = require('../controllers/likes.controller');
+const follow = require('../controllers/followUser.controller');
 
 //facebook oauth routes
 router
@@ -72,5 +73,9 @@ router
 router
 	.route('/searchpeople')
 	.post(search.searchPeople);
+
+router
+	.route('/follow')
+	.post(follow.followUser);
 
 module.exports = router;
