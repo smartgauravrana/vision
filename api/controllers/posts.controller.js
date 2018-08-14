@@ -158,7 +158,7 @@ module.exports.postsDeleteOne = (req, res) => {
 
     console.log('GET postId', postId);
 
-    Post.findByIdAndRemove(postId, (err, post) => {
+    Post.findOneAndRemove({_id: postId}, (err, post) => {
         if (err) {
             res
             .status(500)
@@ -173,6 +173,8 @@ module.exports.postsDeleteOne = (req, res) => {
         if(!post) {
             response.status = 404;  
             response.msg.message = "Post not found"
+        } else{
+            post.remove();
         }
         
         return res.status(response.status).send(response.msg);
