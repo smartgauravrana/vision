@@ -10,8 +10,8 @@ module.exports.likesGetAll = (req, res) => {
     .findById(postId)
     .select('comments')
     .exec((err, post) => {
-      var thisComment;
-      var response = {
+      let thisComment;
+      let response = {
         status : 200,
         message : {}
       };

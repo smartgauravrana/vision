@@ -1,6 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const followingSchema = new Schema({
+	username: String
+});
+
+const followerSchema = new Schema({
+	username: String
+});
+
 const userSchema = new Schema({
 	facebook: {
 		id: String,
@@ -21,8 +29,8 @@ const userSchema = new Schema({
 		type: Schema.Types.ObjectId,
 		ref: 'Post'
 	  }],
-	following: [String],
-	followers: [String]
+	following: [followingSchema],
+	followers: [followerSchema]
 });
 
 mongoose.model('User', userSchema);
