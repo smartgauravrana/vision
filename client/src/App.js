@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
-import './App.css';
+import { connect } from 'react-redux';
+
+import Layout from './hoc/Layout/Layout';
 
 class App extends Component {
-
-  state = {
-    response: ''
-  };
-
+  
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro"></p>
+      <div>
+        <Layout>
+          <h1>Medium Blog Content</h1>
+        </Layout>
       </div>
     );
   }
 }
 
 export default App;
+
