@@ -6,7 +6,7 @@ module.exports.followUser = (req, res) => {
 	if (req.body.user1 && req.body.user2) {
 
 		User
-			.findOne({'username': req.body.user1})
+			.findOne({'username': req.body.user1}, )
 			.select('following')
 			.exec((err, followingArr) => {
 
