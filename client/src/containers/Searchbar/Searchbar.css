@@ -1,0 +1,14 @@
+.Button {
+    
+    font-size: 15px;
+    margin:0;
+    padding-left: 0px;
+    font-family: 'Oswald', sans-serif;
+}
+
+.InputAdj {
+
+    padding-top: 12px;
+    padding-right: 0px;
+    margin: 0;
+}
