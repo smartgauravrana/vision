@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import classes from './Auth.css';
 import Logo from '../../components/UI/Logo/Logo';
-import Image from '../../assets/images/login_img.png';
+// import Image from '../../assets/images/login_img1.jpg';
 
 class Auth extends Component {
 
@@ -10,11 +10,10 @@ class Auth extends Component {
         return (
             <div className={classes.Container}>
                 <div className={classes.Content}>
-                    <div className={classes.Font}>
+                    <div className={classes.Font2}>
                         <Logo />
                     </div>
-                    <p>Sign in to access your personalized homepage, follow authors and topics you love, and clap for stories that matter to you.</p>
-                    <img src={Image} />
+                    <p className={classes.Font}>Sign in to access your personalized homepage, follow authors and topics you love, and clap for stories that matter to you.</p>
                 </div>                                
 
                 <div className={classes.Footer}>
