@@ -4,6 +4,10 @@
     color: grey;
     outline: none;
     cursor: pointer;
-    padding: 14px;
+    padding: 16px;
     /* font-size: auto; */
+}
+
+.Button:hover {
+    color: black;
 }
