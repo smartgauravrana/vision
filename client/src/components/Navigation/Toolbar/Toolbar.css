@@ -3,6 +3,10 @@
     padding: 10px;
 }
 
+.mobileSize {
+    /* color: aliceblue; */
+}
+
 .Font {
     font-family: 'Oswald', sans-serif;
 }
@@ -27,3 +31,12 @@
 
     color: black;
 }
+
+@media (max-width: 1100px) {
+    .mobileSize {
+        display: none;
+    }
+    .TopMargin {
+        padding-top: 0px;
+    }
+} 
