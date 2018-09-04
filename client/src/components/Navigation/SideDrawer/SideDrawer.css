@@ -12,6 +12,12 @@
     transition: transform 0.3s ease-out;
 }
 
+.Logo {
+
+    border-bottom: 2px solid black;
+    font-family: 'Black Ops One', cursive;
+}
+
 .Open {
     transform: translate(0);
 }
