@@ -1,0 +1,11 @@
+.heading {
+    text-align: center;
+    color: black;
+    font-weight: bolder;
+    font-family: 'Oswald', sans-serif;
+}
+
+.paddClass {
+
+    padding-top: 16px;
+}

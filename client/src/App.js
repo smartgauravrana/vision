@@ -5,12 +5,16 @@ import { Route, Switch, Redirect} from 'react-router-dom';
 import Layout from './hoc/Layout/Layout';
 import Feed from './containers/Feed/Feed';
 import Auth from './containers/Auth/Auth';
+import blogCategory from './containers/Blog/BlogCategory/BlogCategory';
+import NewPost from './containers/Post/NewPost/NewPost';
 
 class App extends Component {
 
   render() {
     let routes = (
       <Switch>
+        <Route path='/NewPost' component={NewPost} />
+        <Route path='/blogCategory' component={blogCategory} />
         <Route path='/auth' component={Auth} />
         <Route path='/' exact component={Feed} />
         <Redirect to='/' />
