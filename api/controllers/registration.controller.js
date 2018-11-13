@@ -3,11 +3,8 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 const passport = require('passport')
 
-if(process.env.NODE_ENV === 'production') {
-	const config = require('../config/prod');
-} else {
-	const config = require('../config/auth');
-}
+const config = require('../config/auth');
+
 
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
