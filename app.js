@@ -10,8 +10,8 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const app = express();
 
-
-app.set('port', 5000);
+const port = process.env.PORT || 5000;
+app.set('port', port);
 
 app.use((req, res, next) => {
     console.log(req.method, req.url);
