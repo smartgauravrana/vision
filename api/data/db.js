@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var dburl = 'mongodb://localhost:27017/vision';
+var dburl = 'mongodb+srv://gaurav:vodafone8053@road-safety-cluster-x5pys.mongodb.net/test?retryWrites=true';
 
 mongoose.connect(dburl);
 
