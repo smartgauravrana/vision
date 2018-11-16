@@ -2,7 +2,10 @@ const facebookStrategy = require('passport-facebook').Strategy;
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 const passport = require('passport')
+
 const config = require('../config/auth');
+
+
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
 
