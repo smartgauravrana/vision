@@ -23,6 +23,7 @@ passport.use(new facebookStrategy({
 			return done(null, user);
 		else {
 			var newUser = new User();
+			console.log(profile);
 			newUser.facebook.id = profile.id;
 			newUser.facebook.token = accessToken;
 			newUser.facebook.name = profile.displayName;
