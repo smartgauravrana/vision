@@ -7,24 +7,33 @@ const express = require('express');
 const path = require('path');
 const routes = require('./api/routes');
 const bodyParser = require('body-parser');
+const cookieSession = require('cookie-session');
 const passport = require('passport');
 const app = express();
 
 const port = process.env.PORT || 5000;
 app.set('port', port);
 
+app.use(
+    cookieSession({
+        maxAge: 30*24*60*60*1000,
+        keys: ['bdhaijadhnichb']
+    })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use((req, res, next) => {
     console.log(req.method, req.url);
     next();
 })
 
+app.get('/current_user', (req, res) => {res.send(req.user)});
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(bodyParser.urlencoded({extended: false}));
-
-app.use(passport.initialize());
-
-app.use(passport.session());
 
 app.use('/api', routes);
 
