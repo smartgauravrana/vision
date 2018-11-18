@@ -29,8 +29,6 @@ app.use((req, res, next) => {
     next();
 })
 
-app.get('/current_user', (req, res) => {res.send(req.user)});
-
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(bodyParser.urlencoded({extended: false}));

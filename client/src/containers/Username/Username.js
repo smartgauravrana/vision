@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 // import Button from '../../components/UI/Button/Button';
 import classes from './Username.css';
+import * as actions from '../../store/actions';
+import { connect } from 'react-redux';
 
 class Username extends Component {
+
+    componentDidMount () {
+        console.log('username component');
+        this.props.fetchUser();
+    }
 
     headClass = ["row", classes.headClass];
     mainClass = ["container-fluid", classes.mainClass];
@@ -24,4 +31,12 @@ class Username extends Component {
     }
 }
 
-export default Username;
+const mapDispatchToProps = dispatch => {
+
+    return {
+
+        fetchUser: () => dispatch(actions.fetchTheUser())
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Username);

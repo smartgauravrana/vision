@@ -1,1 +1,1 @@
-export { authFacebook } from './auth';
+export { authFacebook, fetchTheUser } from './auth';

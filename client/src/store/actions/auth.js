@@ -8,6 +8,12 @@ export const authSuccessFb = () => {
     }
 }
 
+export const fetchUserSuccess = () => {
+    return {
+        type: actionTypes.FETCH_USER
+    }
+}
+
 export const authFacebook = () => {
 
     return dispatch => {
@@ -18,5 +24,17 @@ export const authFacebook = () => {
                 dispatch(authSuccessFb);
             })
             .catch(error => console.log('error 1 : ', error));
+    }
+}
+
+export const fetchTheUser = () => {
+
+    return dispatch => {
+        axios.get('/current_user')
+            .then(response => {
+                console.log(response);
+                dispatch(fetchUserSuccess);
+            })
+            .catch(error => console.log('error 2 :', error));
     }
 }
