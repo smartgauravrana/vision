@@ -1,0 +1,2 @@
+export const SIGNIN_FACEBOOK = 'SIGNIN_FACEBOOK';
+export const SIGNIN_GOOGLE = 'SIGNIN_GOOGLE';

@@ -1,0 +1,1 @@
+export { authFacebook } from './auth';

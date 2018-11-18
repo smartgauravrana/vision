@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import actions from '../../store/actions/index';
+import { connect } from 'react-redux';
 
 import classes from './Auth.css';
 import Logo from '../../components/UI/Logo/Logo';
@@ -21,7 +23,7 @@ class Auth extends Component {
                         <a href="http://google.com">Signin with <i class="fab fa-google"></i></a>
                     </button>
                     <button className={classes.Facebook}>
-                        <a href="http://google.com">Signin with <i class="fab fa-facebook-square"></i></a>
+                        <a href="http://google.com" onClick={this.props.authFb} >Signin with <i class="fab fa-facebook-square"></i></a>
                     </button>                            
                 </div>
                     
@@ -30,4 +32,10 @@ class Auth extends Component {
     }
 }
 
-export default Auth;
+const mapDispatchToProps = dispatch => {
+    return {
+        authFb : (dispatch) => (actions.authFacebook())
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Auth);
