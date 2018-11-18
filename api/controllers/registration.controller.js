@@ -9,10 +9,21 @@ const config = require('../config/auth');
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
 
+passport.serializeUser((user, done) => {
+	done(null, user.id);
+  });
+  
+  passport.deserializeUser((id, done) => {
+	User.findById(id).then(user => {
+	  done(null, user);
+	});
+  });
+
 passport.use(new facebookStrategy({
 	clientID: config.facebookAuth.clientId,
 	clientSecret: config.facebookAuth.clientSecret,
 	callbackURL: config.facebookAuth.callbackURL,
+	proxy: true,
 	profileFields: ['id', 'emails', 'displayName', 'name', 'picture.type(large)']
 }, (accessToken, refreshToken, profile, done) => {
 	console.log(profile);
@@ -46,7 +57,8 @@ passport.use(new facebookStrategy({
 passport.use(new GoogleStrategy({
     clientID: config.googleAuth.clientId,
     clientSecret: config.googleAuth.clientSecret,
-    callbackURL: config.googleAuth.callbackURL
+	callbackURL: config.googleAuth.callbackURL,
+	proxy: true
   },
   (accessToken, refreshToken, profile, done) => {
 	  console.log(profile);
