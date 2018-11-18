@@ -12,11 +12,14 @@ const authSuccessFB = (state, action) => {
     console.log('signin done');
 }
 
-const reducer = (state = initialState, action) = {
+const reducer = (state = initialState, action) => {
 
     switch(action.type){
 
         case actionTypes.SIGNIN_FACEBOOK: return authSuccessFB(state, action);
-        default return state;
+        default:
+         return state;
     }
 }
+
+export default reducer;

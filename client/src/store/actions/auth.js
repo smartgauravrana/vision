@@ -3,8 +3,7 @@ import axios from '../../axios-orders';
 
 export const authSuccessFb = () => {
 
-    return {
-        
+    return {        
         type: actionTypes.SIGNIN_FACEBOOK
     }
 }

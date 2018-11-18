@@ -20,10 +20,10 @@ class Auth extends Component {
 
                 <div className={classes.Footer}>
                     <button className={classes.Google}>
-                        <a href="http://google.com">Signin with <i class="fab fa-google"></i></a>
+                        <a >Signin with <i class="fab fa-google"></i></a>
                     </button>
                     <button className={classes.Facebook}>
-                        <a href="http://google.com" onClick={this.props.authFb} >Signin with <i class="fab fa-facebook-square"></i></a>
+                        <a  onClick={this.props.authFb} >Signin with <i class="fab fa-facebook-square"></i></a>
                     </button>                            
                 </div>
                     
