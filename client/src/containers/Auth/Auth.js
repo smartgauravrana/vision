@@ -23,7 +23,7 @@ class Auth extends Component {
                         <a >Signin with <i class="fab fa-google"></i></a>
                     </button>
                     <button className={classes.Facebook} onClick={this.props.authFb}>
-                        <a>Signin with <i class="fab fa-facebook-square"></i></a>
+                        <a href="/api/auth/facebook">Signin with <i class="fab fa-facebook-square"></i></a>
                     </button>                            
                 </div>
                     
