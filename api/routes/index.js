@@ -9,6 +9,7 @@ const ctrlLikes = require('../controllers/likes.controller');
 const follow = require('../controllers/followUser.controller');
 
 //facebook oauth routes
+
 router
 	.get('/auth/facebook', passport.authenticate('facebook', {scope: ['email']}));
 

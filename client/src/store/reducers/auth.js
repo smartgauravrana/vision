@@ -9,7 +9,8 @@ const initialState = {
 
 const authSuccessFB = (state, action) => {
 
-    console.log('signin done');
+    console.log('authSuccessReducer');
+    return updateObject(state, {token: '123'});
 }
 
 const reducer = (state = initialState, action) => {

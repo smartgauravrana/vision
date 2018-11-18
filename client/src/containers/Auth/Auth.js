@@ -22,8 +22,8 @@ class Auth extends Component {
                     <button className={classes.Google}>
                         <a >Signin with <i class="fab fa-google"></i></a>
                     </button>
-                    <button className={classes.Facebook}>
-                        <a  onClick={this.props.authFb()} >Signin with <i class="fab fa-facebook-square"></i></a>
+                    <button className={classes.Facebook} onClick={this.props.authFb}>
+                        <a>Signin with <i class="fab fa-facebook-square"></i></a>
                     </button>                            
                 </div>
                     

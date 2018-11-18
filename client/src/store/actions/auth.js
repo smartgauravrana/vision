@@ -11,7 +11,8 @@ export const authSuccessFb = () => {
 export const authFacebook = () => {
 
     return dispatch => {
-        axios.post('auth/facebook')
+        console.log('authFacebookAction');
+        axios.get('/auth/facebook')
             .then(response => {
                 console.log(response);
                 dispatch(authSuccessFb);
