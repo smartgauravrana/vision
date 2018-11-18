@@ -1,0 +1,15 @@
+.mainClass {
+
+    text-align: center;
+    font-family: 'Federant', cursive;
+}
+
+
+.headClass {
+
+    display: inline-block;
+    border: solid 2px cadetblue;
+    font-weight: bolder;
+    border-radius: 20px;
+    padding: 30px 30px 30px 30px;
+}

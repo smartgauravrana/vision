@@ -7,12 +7,14 @@ import Feed from './containers/Feed/Feed';
 import Auth from './containers/Auth/Auth';
 import blogCategory from './containers/Blog/BlogCategory/BlogCategory';
 import NewPost from './containers/Post/NewPost/NewPost';
+import Username from './containers/Username/Username';
 
 class App extends Component {
 
   render() {
     let routes = (
       <Switch>
+        <Route path='/username' component={Username} />
         <Route path='/NewPost' component={NewPost} />
         <Route path='/blogCategory' component={blogCategory} />
         <Route path='/auth' component={Auth} />

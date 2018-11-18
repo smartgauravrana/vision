@@ -15,7 +15,7 @@ router
 router
 	.get('/auth/facebook/callback', 
 		passport.authenticate('facebook', { 
-											successRedirect: 'http://localhost:3000', 
+											successRedirect: 'http://localhost:3000/username', 
 											failureRedirect: '/authenticate',
 											session: false 
 										}));
@@ -27,7 +27,7 @@ router
 router
 	.get('/auth/google/callback', 
 		passport.authenticate('google', { 
-											successRedirect: 'http://localhost:3000', 
+											successRedirect: 'http://localhost:3000/username', 
 											failureRedirect: '/authenticate',
 											session: false 
 										}));
