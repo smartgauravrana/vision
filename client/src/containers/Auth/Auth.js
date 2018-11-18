@@ -23,7 +23,7 @@ class Auth extends Component {
                         <a >Signin with <i class="fab fa-google"></i></a>
                     </button>
                     <button className={classes.Facebook}>
-                        <a  onClick={this.props.authFb} >Signin with <i class="fab fa-facebook-square"></i></a>
+                        <a  onClick={this.props.authFb()} >Signin with <i class="fab fa-facebook-square"></i></a>
                     </button>                            
                 </div>
                     
@@ -34,7 +34,7 @@ class Auth extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        authFb : (dispatch) => (actions.authFacebook())
+        authFb : () => dispatch(actions.authFacebook())
     }
 }
 
