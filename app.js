@@ -36,6 +36,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(cors());
 
+app.use('/api', routes);
+
 if (process.env.NODE_ENV === 'production') {
     // Express will serve up production assets
     // like our main.js file, or main.css file!
@@ -49,7 +51,7 @@ if (process.env.NODE_ENV === 'production') {
     });
   }
 
-app.use('/api', routes);
+
 
 const server = app.listen(app.get('port'), (req, res) => {
     console.log("Server running on port no. " + server.address().port);
