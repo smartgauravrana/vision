@@ -10,6 +10,7 @@ const initialState = {
 const authSuccessFB = (state, action) => {
 
     console.log('authSuccessReducer');
+    return state;
 }
 
 const fetchSuccess = (state, action) => {

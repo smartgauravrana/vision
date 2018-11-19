@@ -23,7 +23,7 @@ class Username extends Component {
                         <input className="form-control"/>
                     </div>
                     <div className="form-group">
-                        <button type="buton" className="btn btn-info">Next</button>
+                        <button type="button" className="btn btn-info">Next</button>
                     </div>
                 </div>
             </div>

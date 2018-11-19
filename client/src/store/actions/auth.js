@@ -30,10 +30,11 @@ export const authFacebook = () => {
 export const fetchTheUser = () => {
 
     return dispatch => {
-        axios.get('/current_user')
+        console.log('calling the api');
+        axios.get('current_user')
             .then(response => {
                 console.log(response);
-                dispatch(fetchUserSuccess);
+                dispatch(fetchUserSuccess());
             })
             .catch(error => console.log('error 2 :', error));
     }
